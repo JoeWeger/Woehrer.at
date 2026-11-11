@@ -15,11 +15,11 @@ export const years = new Date().getFullYear() - site.founded;
 
 export const services = [
   { n: "01", slug: "neubau", title: "Neubau & Industriebau", text: "Wohnbau, Industriebau und öffentliche Bauten, vom ersten Spatenstich bis zur Übergabe.",
-    items: ["Industriebau", "Öffentliche Bauten", "Neubau Wohn- und Gewerbe"] },
+    items: ["Hochbau und Wohnbau", "Industriebau", "Öffentliche Bauten", "Tiefbau"] },
   { n: "02", slug: "umbau", title: "Um- & Zubau", text: "Erweiterungen und Umbauten im Bestand, inklusive Abbruch- und Stemmarbeiten.",
     items: ["Aus-, Um- und Zubauten", "Abbruch- und Stemmarbeiten", "Kostenvoranschläge"] },
   { n: "03", slug: "sanierung", title: "Sanierung", text: "Unsere Kernkompetenz: Sanieren, Renovieren und Instandsetzen mit Substanz.",
-    items: ["Sanierungen", "Renovierungen", "Wohnungs-Instandsetzungen", "Instandhaltungs- und Instandsetzungsarbeiten"] },
+    items: ["Althaussanierung", "Brand- und Wasserschadensanierung", "Abdichtung, Keller- und Mauertrockenlegung", "Renovierungen", "Wohnungs-Instandsetzungen", "Instandhaltungs- und Instandsetzungsarbeiten"] },
   { n: "04", slug: "kanal", title: "Kanal", text: "Kanalbau und Leitungsarbeiten für Gemeinden, Betriebe und Private.",
     items: ["Kanalbau", "Anschlüsse und Leitungen", "Kostenvoranschläge"] },
 ];
@@ -27,7 +27,9 @@ export const services = [
 export const categories = ["Privat", "Sanierung", "Neubau", "Zu- und Umbau", "Gewerbe"] as const;
 
 export const projects: { slug: string; title: string; type: (typeof categories)[number]; place: string; year: number; area: string; text: string }[] = [
-  { slug: "tankstelle", title: "Tankstelle mit Shop", type: "Gewerbe", place: "Oberösterreich", year: 2022, area: "–", text: "Beispiel: Neubau einer Tankstelle mit Shop und Waschstraße. Text bitte ersetzen." },
+  { slug: "bp-tankstelle", title: "BP Tankstelle", type: "Gewerbe", place: "Oberösterreich", year: 2022, area: "–", text: "Beispiel: Tankstelle mit Shop. Kategorie, Ort und Text bitte prüfen." },
+  { slug: "biostetique-salon", title: "Biostetique Salon", type: "Gewerbe", place: "Oberösterreich", year: 2021, area: "–", text: "Beispiel: Friseursalon. Kategorie, Ort und Text bitte prüfen." },
+  { slug: "niederleitner", title: "Malerei Niederleitner", type: "Gewerbe", place: "Oberösterreich", year: 2021, area: "–", text: "Beispiel: Betriebsgebäude für den Partner Niederleitner. Kategorie und Text bitte prüfen." },
   { slug: "wohnhaus-pool", title: "Wohnhaus mit Terrasse", type: "Privat", place: "Oberösterreich", year: 2021, area: "–", text: "Beispiel: Privates Wohnhaus mit Holzterrasse und Pool. Text bitte ersetzen." },
   { slug: "kindergarten", title: "Bildungseinrichtung", type: "Neubau", place: "Oberösterreich", year: 2020, area: "–", text: "Beispiel: Öffentlicher Bau mit farbigem Außenbereich. Text bitte ersetzen." },
   { slug: "villa-sanierung", title: "Villa Sanierung", type: "Sanierung", place: "Oberösterreich", year: 2023, area: "–", text: "Beispiel: Umfassende Sanierung eines Bestandsgebäudes. Text bitte ersetzen." },
