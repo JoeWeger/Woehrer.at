@@ -7,12 +7,12 @@ import { services } from "@/lib/data";
 
 export const metadata: Metadata = { title: "Leistungen" };
 
-const steps = ["Beratung & Aufmaß", "Planung & Angebot", "Ausführung", "Übergabe & Gewährleistung"];
+const steps = ["Beratung & Kostenvoranschlag", "Planung & Angebot", "Ausführung", "Übergabe & Gewährleistung"];
 
 export default function Page() {
   return (
     <>
-      <PageHero no="02" kicker="Leistungen" title="Bauen. Umbauen. Sanieren." intro="Platzhaltertext: Wir begleiten Ihr Vorhaben von der ersten Idee bis zur Übergabe – mit eigenem Know-how und verlässlichen Partnerbetrieben." />
+      <PageHero no="02" kicker="Leistungen" title="Bauen. Umbauen. Sanieren." intro="Informieren Sie sich unverbindlich über unsere Leistungen. Wir begleiten Ihr Vorhaben von der ersten Idee bis zur Übergabe." />
       <section className="py-16 md:py-28">
         <Container className="space-y-20 md:space-y-32">
           {services.map((s, i) => (
@@ -21,9 +21,9 @@ export default function Page() {
               <Reveal delay={100} className={`md:col-span-7 ${i % 2 ? "md:order-1" : ""} flex flex-col justify-center`}>
                 <p className="label mb-4">{s.n} / Leistung</p>
                 <h2 className="text-[clamp(2.5rem,6vw,5rem)] uppercase">{s.title}</h2>
-                <p className="mt-6 max-w-xl text-lg text-ink-2">{s.text} Platzhalter: Hier folgt eine ausführlichere Beschreibung mit typischen Aufgaben, Materialien und Referenzen.</p>
+                <p className="mt-6 max-w-xl text-lg text-ink-2">{s.text}</p>
                 <ul className="mt-8 max-w-xl divide-y divide-line-soft border-y-2 border-ink">
-                  {["Leistungsmerkmal eins", "Leistungsmerkmal zwei", "Leistungsmerkmal drei"].map((l) => (
+                  {s.items.map((l) => (
                     <li key={l} className="flex items-center gap-4 py-3"><span aria-hidden className="size-2 bg-signal outline outline-2 outline-ink" />{l}</li>))}
                 </ul>
               </Reveal>

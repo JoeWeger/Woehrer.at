@@ -12,20 +12,21 @@ export function SiteFooter() {
         <div className="grid gap-14 md:grid-cols-12">
           <div className="md:col-span-4">
             <Logo onDark />
-            <p className="mt-8 max-w-sm text-paper/75">Neubau, Umbau und Sanierung aus einer Hand. Verlässlich, termintreu, sauber gebaut.</p>
+            <p className="mt-8 max-w-sm text-paper/75">Ihr Umbau- und Sanierungsexperte aus Traun. Familienbetrieb seit 1951, Baumeister-Qualität: Bauen heißt Vertrauen.</p>
           </div>
           <div className="md:col-span-3">
             <h2 className="label mb-5 !font-mono !text-xs !font-normal text-signal" style={{ fontStretch: "100%", letterSpacing: "0.08em" }}>Kontakt</h2>
             <address className="not-italic leading-relaxed text-paper/90">
               {site.address.map((l) => <div key={l}>{l}</div>)}
-              <a className="link-line mt-4 block w-fit" href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a>
+              <a className="link-line mt-4 block w-fit" href={`tel:${site.phoneHref}`}>Tel. {site.phone}</a>
+              <span className="block text-paper/70">Fax {site.fax}</span>
               <a className="link-line block w-fit" href={`mailto:${site.mail}`}>{site.mail}</a>
             </address>
           </div>
           <nav aria-label="Footer" className="md:col-span-2">
             <h2 className="label mb-5 !font-mono !text-xs !font-normal text-signal" style={{ fontStretch: "100%", letterSpacing: "0.08em" }}>Seiten</h2>
             <ul className="space-y-2">
-              {[["Leistungen", "/leistungen"], ["Projekte", "/projekte"], ["Immobilien", "/immobilien"], ["Über uns", "/ueber-uns"], ["Kontakt", "/kontakt"]].map(([l, h]) => (
+              {[["Unternehmen", "/ueber-uns"], ["Leistungen", "/leistungen"], ["Referenzen", "/projekte"], ["Immobilien", "/immobilien"], ["Team", "/team"], ["Kontakt", "/kontakt"]].map(([l, h]) => (
                 <li key={h}><Link className="link-line" href={h}>{l}</Link></li>))}
             </ul>
           </nav>

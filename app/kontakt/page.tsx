@@ -17,15 +17,16 @@ export default async function Page({ searchParams }: { searchParams: Promise<{ b
           <aside className="space-y-10 lg:col-span-5">
             <address className="not-italic">
               <p className="label mb-3 text-ink-2">Telefon</p>
-              <a className="link-line font-display text-3xl font-extrabold" href={`tel:${site.phone.replace(/\s/g, "")}`}>{site.phone}</a>
+              <a className="link-line font-display text-3xl font-extrabold" href={`tel:${site.phoneHref}`}>{site.phone}</a>
+              <p className="mt-1 text-ink-2">Fax {site.fax}</p>
               <p className="label mb-3 mt-8 text-ink-2">E-Mail</p>
               <a className="link-line font-display text-2xl font-extrabold" href={`mailto:${site.mail}`}>{site.mail}</a>
               <p className="label mb-3 mt-8 text-ink-2">Adresse</p>
               <p className="text-lg">{site.address.map((l) => <span key={l} className="block">{l}</span>)}</p>
               <p className="label mb-3 mt-8 text-ink-2">Bürozeiten</p>
-              <p>Mo–Do 7:00–17:00 · Fr 7:00–12:00 <span className="text-ink-2">(Platzhalter)</span></p>
+              <p>Bitte Zeiten ergänzen <span className="text-ink-2">(Platzhalter)</span></p>
             </address>
-            <Placeholder note="Karte / Standort" ratio="aspect-[4/3]" />
+            <Placeholder note="Karte · Linzer Straße 84, Traun" ratio="aspect-[4/3]" />
           </aside>
         </Container>
       </section>

@@ -8,7 +8,7 @@ import { Counter } from "@/components/counter";
 import { Button } from "@/components/ui/button";
 import { ProjectCard, PropertyCard } from "@/components/cards";
 import { CtaBand } from "@/components/cta-band";
-import { facts, projects, properties, services, site } from "@/lib/data";
+import { facts, partners, projects, properties, services, site } from "@/lib/data";
 
 export default function Home() {
   return (
@@ -22,12 +22,12 @@ export default function Home() {
         <Container className="relative">
           <div className="-mt-16 grid gap-8 border-2 border-ink bg-paper p-6 md:-mt-24 md:grid-cols-[1fr_auto] md:items-end md:p-12">
             <div>
-              <p className="label mb-5 flex items-center gap-3"><span className="inline-block size-3 bg-signal outline outline-2 outline-ink" />Baugesellschaft · {site.claim}</p>
+              <p className="label mb-5 flex items-center gap-3"><span className="inline-block size-3 bg-signal outline outline-2 outline-ink" />Baugesellschaft · seit {site.founded} in Traun</p>
               <h1 className="text-[clamp(2.6rem,7.2vw,6.5rem)] uppercase">Wir bauen,<br />was bleibt.</h1>
             </div>
             <div className="flex flex-col gap-4 sm:flex-row md:flex-col">
               <Button asChild size="lg"><Link href="/kontakt">Projekt anfragen <ArrowUpRight className="size-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></Link></Button>
-              <Button asChild size="lg" variant="outline"><Link href="/projekte">Projekte ansehen <ArrowDown className="size-5 -rotate-90" /></Link></Button>
+              <Button asChild size="lg" variant="outline"><Link href="/projekte">Referenzen ansehen <ArrowDown className="size-5 -rotate-90" /></Link></Button>
             </div>
           </div>
         </Container>
@@ -40,7 +40,7 @@ export default function Home() {
           <Reveal className="md:col-span-3"><p className="label pt-3">01 / Haltung</p></Reveal>
           <Reveal delay={100} className="md:col-span-9">
             <p className="font-display text-[clamp(1.75rem,4vw,3.25rem)] font-bold leading-[1.1] tracking-tight" style={{ fontStretch: "100%" }}>
-              Vom ersten Strich bis zur Schlüsselübergabe: <span className="bg-signal px-1 [box-decoration-break:clone]">Neubau, Umbau und Sanierung</span> aus einer Hand. Verlässlich geplant, sauber ausgeführt, im Termin- und Kostenrahmen.
+              Willkommen bei Ihrem <span className="bg-signal px-1 [box-decoration-break:clone]">Umbau- und Sanierungsexperten</span>. Seit 1951 bauen wir in dritter Generation: von der Beratung über die Sanierung bis zum Neubau, mit Baumeister-Handschlag.
             </p>
           </Reveal>
         </Container>
@@ -49,7 +49,7 @@ export default function Home() {
       {/* LEISTUNGEN */}
       <section className="border-y-2 border-ink grid-plan py-20 md:py-32">
         <Container>
-          <SectionHead no="02" kicker="Leistungen" title="Was wir tun." />
+          <SectionHead no="02" kicker="Leistungen" title="Was wir für Sie tun." />
           <ul className="border-t-2 border-ink bg-paper">
             {services.map((s, i) => (
               <Reveal as="li" key={s.slug} delay={i * 60} className="border-b-2 border-ink">
@@ -68,14 +68,14 @@ export default function Home() {
       {/* PROJEKTE */}
       <section className="py-20 md:py-32">
         <Container>
-          <SectionHead no="03" kicker="Referenzen" title="Ausgewählte Projekte." />
+          <SectionHead no="03" kicker="Referenzen" title="Ausgewählte Referenzen." />
           <div className="grid gap-x-8 gap-y-14 md:grid-cols-12">
             <Reveal className="md:col-span-7"><ProjectCard p={projects[0]} ratio="aspect-[4/3]" /></Reveal>
             <Reveal delay={100} className="md:col-span-5 md:mt-24"><ProjectCard p={projects[1]} ratio="aspect-[4/5]" /></Reveal>
             <Reveal className="md:col-span-5"><ProjectCard p={projects[2]} ratio="aspect-[4/5]" /></Reveal>
             <Reveal delay={100} className="md:col-span-7 md:mt-24"><ProjectCard p={projects[3]} ratio="aspect-[4/3]" /></Reveal>
           </div>
-          <div className="mt-16"><Button asChild variant="ink" size="lg"><Link href="/projekte">Alle Projekte <ArrowUpRight className="size-5" /></Link></Button></div>
+          <div className="mt-16"><Button asChild variant="ink" size="lg"><Link href="/projekte">Alle Referenzen <ArrowUpRight className="size-5" /></Link></Button></div>
         </Container>
       </section>
 
@@ -96,12 +96,31 @@ export default function Home() {
       {/* IMMOBILIEN */}
       <section className="py-20 md:py-32">
         <Container>
-          <SectionHead no="04" kicker="Immobilien" title="Zuhause finden. Anlage sichern." intro="Wohnungen, Häuser, Gewerbeflächen und Baugrund – direkt vom Bauträger, ohne Umwege." />
+          <SectionHead no="04" kicker="Immobilien" title="Zuhause finden. Anlage sichern." intro="Wohnungen, Häuser, Gewerbeflächen und Baugrund, direkt von Ihrem Bauunternehmen." />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {properties.slice(0, 3).map((p, i) => <Reveal key={p.slug} delay={i * 80}><PropertyCard p={p} /></Reveal>)}
           </div>
           <div className="mt-12"><Button asChild variant="outline" size="lg"><Link href="/immobilien">Alle Immobilien <ArrowUpRight className="size-5" /></Link></Button></div>
         </Container>
+      </section>
+
+      {/* JOBS + PARTNER */}
+      <section className="border-t-2 border-ink">
+        <div className="grid md:grid-cols-2">
+          <div className="min-w-0 bg-ink px-5 py-14 text-paper md:border-r-2 md:border-ink md:p-16">
+            <p className="label mb-5 text-signal">Karriere</p>
+            <h2 className="text-[clamp(1.9rem,4.2vw,3.5rem)] uppercase">Jobangebot.<br />Jetzt bewerben!</h2>
+            <p className="mt-6 max-w-md text-paper/80">Wir suchen Verstärkung auf der Baustelle und im Büro. Werden Sie Teil eines Familienbetriebs mit Handschlagqualität.</p>
+            <Button asChild variant="onDark" className="mt-8"><Link href="/team#jobs">Zu den Jobs <ArrowUpRight className="size-4" /></Link></Button>
+          </div>
+          <div className="min-w-0 px-5 py-14 md:p-16">
+            <p className="label mb-5">Aktive Partnerschaften</p>
+            <ul className="divide-y-2 divide-ink border-y-2 border-ink">
+              {partners.map((n) => (<li key={n} className="flex items-center justify-between gap-4 py-5 font-display text-xl font-extrabold uppercase md:text-2xl">{n}<span className="label text-ink-2">Logo</span></li>))}
+            </ul>
+            <p className="label mt-8 flex items-center gap-3"><span aria-hidden className="grid size-10 place-items-center border-2 border-ink font-display font-black">BM</span>Baumeister · Bauen heißt Vertrauen</p>
+          </div>
+        </div>
       </section>
 
       {/* BRENNEREI */}

@@ -9,7 +9,8 @@ export default function Page() {
       <PageHero no="§" kicker="Rechtliches" title="Impressum" />
       <Container className="max-w-3xl py-16 md:py-24">
         <div className="space-y-4 text-ink-2">
-          <p>Platzhalter: Rechtstexte bitte vom Unternehmen bzw. einer Rechtsberatung liefern lassen. Firmenwortlaut, Sitz, UID, Firmenbuchnummer, Gewerbebehörde und Kammerzugehörigkeit gehören hier hinein.</p>
+          <p className="text-ink"><strong>Wöhrer Baugesellschaft mbH</strong><br />Linzer Straße 84, A-4050 Traun<br />Tel. 07229/72411-0 · Fax DW 20<br />office@woehrer.at</p>
+          <p>Platzhalter: UID, Firmenbuchnummer und -gericht, Gewerbebehörde, Kammerzugehörigkeit und Geschäftsführung bitte aus dem bisherigen Impressum übernehmen.</p>
         </div>
       </Container>
     </>

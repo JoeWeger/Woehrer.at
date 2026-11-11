@@ -1,43 +1,69 @@
-// Alle Inhalte sind Platzhalter – bitte durch echte Daten ersetzen.
+// Inhalte: Firmendaten, Leistungen, Geschichte und Partner stammen von der bisherigen Website.
+// Projekte, Immobilien, Team-Namen und Zahlen zu Mitarbeitenden sind weiterhin Beispiele.
 export const site = {
-  name: "Wöhrer Baugesellschaft",
+  name: "Wöhrer Baugesellschaft mbH",
   claim: "mit Sanierungskompetenz",
-  phone: "+43 000 000 000",
+  phone: "07229/72411-0",
+  phoneHref: "+43722972411",
+  fax: "DW 20",
   mail: "office@woehrer.at",
-  address: ["Musterstraße 1", "0000 Musterort"],
+  address: ["Linzer Straße 84", "A-4050 Traun"],
   brennereiUrl: "https://brennerei.woehrer.at",
-  founded: 1990,
+  founded: 1951,
 };
+export const years = new Date().getFullYear() - site.founded;
 
 export const services = [
-  { n: "01", slug: "neubau", title: "Neubau", text: "Wohn-, Gewerbe- und Industriebau, geplant und gebaut aus einer Hand." },
-  { n: "02", slug: "umbau", title: "Um- & Zubau", text: "Erweiterungen und Umbauten im Bestand – mit Blick auf Statik und Budget." },
-  { n: "03", slug: "sanierung", title: "Sanierung", text: "Fassade, Dach, Feuchtigkeit, Energie. Unsere Kernkompetenz seit Jahren." },
-  { n: "04", slug: "generalunternehmer", title: "Generalunternehmer", text: "Ein Ansprechpartner, ein Termin, ein Preis. Alle Gewerke koordiniert." },
+  { n: "01", slug: "neubau", title: "Neubau & Industriebau", text: "Wohnbau, Industriebau und öffentliche Bauten, vom ersten Spatenstich bis zur Übergabe.",
+    items: ["Industriebau", "Öffentliche Bauten", "Neubau Wohn- und Gewerbe"] },
+  { n: "02", slug: "umbau", title: "Um- & Zubau", text: "Erweiterungen und Umbauten im Bestand, inklusive Abbruch- und Stemmarbeiten.",
+    items: ["Aus-, Um- und Zubauten", "Abbruch- und Stemmarbeiten", "Kostenvoranschläge"] },
+  { n: "03", slug: "sanierung", title: "Sanierung", text: "Unsere Kernkompetenz: Sanieren, Renovieren und Instandsetzen mit Substanz.",
+    items: ["Sanierungen", "Renovierungen", "Wohnungs-Instandsetzungen", "Instandhaltungs- und Instandsetzungsarbeiten"] },
+  { n: "04", slug: "kanal", title: "Kanal", text: "Kanalbau und Leitungsarbeiten für Gemeinden, Betriebe und Private.",
+    items: ["Kanalbau", "Anschlüsse und Leitungen", "Kostenvoranschläge"] },
 ];
 
-export const projects = [
-  { slug: "wohnanlage-musterort", title: "Wohnanlage Musterort", type: "Neubau", place: "Musterort", year: 2024, area: "3.200 m²", text: "Platzhalter: 24 Wohneinheiten in ruhiger Lage, fertiggestellt in 14 Monaten." },
-  { slug: "villa-sanierung", title: "Villa Sanierung", type: "Sanierung", place: "Musterstadt", year: 2023, area: "420 m²", text: "Platzhalter: Denkmalgerechte Sanierung inklusive neuer Haustechnik." },
-  { slug: "gewerbehalle", title: "Gewerbehalle", type: "Neubau", place: "Musterdorf", year: 2023, area: "1.800 m²", text: "Platzhalter: Stahlbetonhalle mit Büroanbau." },
-  { slug: "dachausbau", title: "Dachgeschoss-Ausbau", type: "Umbau", place: "Musterstadt", year: 2022, area: "160 m²", text: "Platzhalter: Aufstockung in Holzbauweise auf bestehendem Altbau." },
-  { slug: "fassade-wohnhaus", title: "Fassadensanierung", type: "Sanierung", place: "Musterort", year: 2022, area: "950 m²", text: "Platzhalter: Wärmedämmung und neue Putzfassade." },
-  { slug: "einfamilienhaus", title: "Einfamilienhaus", type: "Neubau", place: "Musterdorf", year: 2021, area: "190 m²", text: "Platzhalter: Massivbau mit Satteldach, schlüsselfertig." },
+export const categories = ["Privat", "Sanierung", "Neubau", "Zu- und Umbau", "Gewerbe"] as const;
+
+export const projects: { slug: string; title: string; type: (typeof categories)[number]; place: string; year: number; area: string; text: string }[] = [
+  { slug: "tankstelle", title: "Tankstelle mit Shop", type: "Gewerbe", place: "Oberösterreich", year: 2022, area: "–", text: "Beispiel: Neubau einer Tankstelle mit Shop und Waschstraße. Text bitte ersetzen." },
+  { slug: "wohnhaus-pool", title: "Wohnhaus mit Terrasse", type: "Privat", place: "Oberösterreich", year: 2021, area: "–", text: "Beispiel: Privates Wohnhaus mit Holzterrasse und Pool. Text bitte ersetzen." },
+  { slug: "kindergarten", title: "Bildungseinrichtung", type: "Neubau", place: "Oberösterreich", year: 2020, area: "–", text: "Beispiel: Öffentlicher Bau mit farbigem Außenbereich. Text bitte ersetzen." },
+  { slug: "villa-sanierung", title: "Villa Sanierung", type: "Sanierung", place: "Oberösterreich", year: 2023, area: "–", text: "Beispiel: Umfassende Sanierung eines Bestandsgebäudes. Text bitte ersetzen." },
+  { slug: "dachausbau", title: "Dachgeschoss-Ausbau", type: "Zu- und Umbau", place: "Oberösterreich", year: 2022, area: "–", text: "Beispiel: Aufstockung auf bestehendem Altbau. Text bitte ersetzen." },
+  { slug: "gewerbehalle", title: "Gewerbehalle", type: "Gewerbe", place: "Oberösterreich", year: 2023, area: "–", text: "Beispiel: Halle mit Büroanbau. Text bitte ersetzen." },
 ];
 
 export const properties = [
-  { slug: "wohnung-musterstadt", title: "3-Zimmer-Wohnung", place: "Musterstadt", area: 82, rooms: 3, price: 289000, mode: "Kauf", text: "Platzhalter: Helle Neubauwohnung mit Balkon und Tiefgaragenplatz." },
-  { slug: "haus-musterort", title: "Einfamilienhaus", place: "Musterort", area: 120, rooms: 5, price: 415000, mode: "Kauf", text: "Platzhalter: Familienhaus mit Garten, ruhige Siedlungslage." },
-  { slug: "buero-musterdorf", title: "Büro / Praxis", place: "Musterdorf", area: 64, rooms: 2, price: 1150, mode: "Miete", text: "Platzhalter: Erdgeschoss, barrierefrei, Parkplätze vor dem Haus." },
-  { slug: "grundstueck-muster", title: "Baugrund", place: "Musterstadt", area: 780, rooms: 0, price: 198000, mode: "Kauf", text: "Platzhalter: Aufgeschlossenes Baugrundstück, voll erschlossen." },
+  { slug: "wohnung-traun", title: "3-Zimmer-Wohnung", place: "Traun", area: 82, rooms: 3, price: 289000, mode: "Kauf", text: "Beispiel: Helle Neubauwohnung mit Balkon und Tiefgaragenplatz." },
+  { slug: "haus-umgebung", title: "Einfamilienhaus", place: "Umgebung Linz", area: 120, rooms: 5, price: 415000, mode: "Kauf", text: "Beispiel: Familienhaus mit Garten, ruhige Siedlungslage." },
+  { slug: "buero-traun", title: "Büro / Praxis", place: "Traun", area: 64, rooms: 2, price: 1150, mode: "Miete", text: "Beispiel: Erdgeschoss, barrierefrei, Parkplätze vor dem Haus." },
+  { slug: "grundstueck", title: "Baugrund", place: "Oberösterreich", area: 780, rooms: 0, price: 198000, mode: "Kauf", text: "Beispiel: Aufgeschlossenes Baugrundstück, voll erschlossen." },
 ];
 
 export const facts = [
-  { value: 30, suffix: "+", label: "Jahre Erfahrung" },
-  { value: 400, suffix: "+", label: "Projekte realisiert" },
-  { value: 25, suffix: "", label: "Mitarbeitende" },
-  { value: 100, suffix: "%", label: "Alles aus einer Hand" },
+  { value: years, suffix: "", label: "Jahre Familienbetrieb" },
+  { value: 3, suffix: "", label: "Generationen" },
+  { value: 4, suffix: "", label: "Leistungsfelder" },
+  { value: 1, suffix: "", label: "Ansprechpartner" },
 ];
+
+export const history: [string, string][] = [
+  ["1951", "Firmengründung von Karl Wöhrer"],
+  ["1955", "Baumeisterprüfung Karl Wöhrer"],
+  ["1970", "Die 2. Generation, Manfred Wöhrer, tritt in das Unternehmen ein"],
+  ["1973", "Brigitte Wöhrer tritt als Lohnverrechnerin ein und unterstützt Rosa Wöhrer im Büro"],
+  ["1975", "Übernahme der Linzer Tiefbaufirma Pöchtrager"],
+  ["1976", "Baumeisterprüfung Manfred Wöhrer und Vereinigung Wöhrer und Pöchtrager zu einer GmbH"],
+  ["1982", "Gründergeneration tritt in den Ruhestand"],
+  ["1993", "HTL-Matura der 3. Generation, Christoph Wöhrer, anschließend Praxis bei der Firma Mandlbauer in Bad Gleichenberg (Steiermark)"],
+  ["2003", "Baumeisterprüfung von Ing. Christoph Wöhrer"],
+  ["2008", "Gisela Wöhrer steigt in die Firma ein und unterstützt Brigitte Wöhrer im Büro"],
+  ["2010", "Manfred und Brigitte Wöhrer treten in den Ruhestand, die 3. Generation übernimmt das Familienunternehmen"],
+];
+
+export const partners = ["Burghart", "Malereibetrieb Niederleitner GmbH"];
 
 export const formatPrice = (p: { price: number; mode: string }) =>
   p.mode === "Miete" ? `€ ${p.price.toLocaleString("de-AT")} / Monat` : `€ ${p.price.toLocaleString("de-AT")}`;
