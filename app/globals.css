@@ -23,20 +23,22 @@
   --blue: #2e3f9b;       /* Logo-Blau */
   --on-ink: #f4f2ec;
   --ring: #2e3f9b;
+  --grid: rgb(18 18 18 / 0.07);
 }
 
 [data-theme="brennerei"] {
-  --paper: #efe9df;
-  --paper-2: #e3dacb;
-  --ink: #1a1410;
-  --ink-2: #4a4036;
-  --line: #1a1410;
-  --line-soft: rgb(26 20 16 / 0.2);
-  --signal: #c26a2e;
-  --on-signal: #fff8ef;
-  --blue: #7a3b12;
-  --on-ink: #efe9df;
-  --ring: #7a3b12;
+  --paper: #15100c;
+  --paper-2: #1f1812;
+  --ink: #efe6d8;
+  --ink-2: #bfb2a1;
+  --line: #efe6d8;
+  --line-soft: rgb(239 230 216 / 0.16);
+  --grid: rgb(239 230 216 / 0.07);
+  --signal: #c8742f;     /* Kupfer */
+  --on-signal: #15100c;
+  --blue: #e3a867;       /* Bernstein für Links auf Dunkel */
+  --on-ink: #15100c;
+  --ring: #e3a867;
 }
 
 @theme inline {
@@ -90,8 +92,8 @@
   /* Bauplan-Raster: sehr feines Linienraster als Hintergrund */
   .grid-plan {
     background-image:
-      linear-gradient(rgb(18 18 18 / 0.07) 1px, transparent 1px),
-      linear-gradient(90deg, rgb(18 18 18 / 0.07) 1px, transparent 1px);
+      linear-gradient(var(--grid) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid) 1px, transparent 1px);
     background-size: 48px 48px;
   }
   /* Schraffur für Bild-Platzhalter */

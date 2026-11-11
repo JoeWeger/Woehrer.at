@@ -8,7 +8,8 @@ export const site = {
   fax: "DW 20",
   mail: "office@woehrer.at",
   address: ["Linzer Straße 84", "A-4050 Traun"],
-  brennereiUrl: "https://brennerei.woehrer.at",
+  // Vorerst als Seite im selben Projekt. Später auf die Subdomain umstellen (z. B. "https://brennerei.woehrer.at").
+  brennereiUrl: "/garagenbrennerei",
   founded: 1951,
 };
 export const years = new Date().getFullYear() - site.founded;

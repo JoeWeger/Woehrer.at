@@ -104,21 +104,20 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* JOBS + PARTNER */}
+      {/* PARTNER + BAUMEISTER */}
       <section className="border-t-2 border-ink">
         <div className="grid md:grid-cols-2">
-          <div className="min-w-0 bg-ink px-5 py-14 text-paper md:border-r-2 md:border-ink md:p-16">
-            <p className="label mb-5 text-signal">Karriere</p>
-            <h2 className="text-[clamp(1.9rem,4.2vw,3.5rem)] uppercase">Jobangebot.<br />Jetzt bewerben!</h2>
-            <p className="mt-6 max-w-md text-paper/80">Wir suchen Verstärkung auf der Baustelle und im Büro. Werden Sie Teil eines Familienbetriebs mit Handschlagqualität.</p>
-            <Button asChild variant="onDark" className="mt-8"><Link href="/team#jobs">Zu den Jobs <ArrowUpRight className="size-4" /></Link></Button>
-          </div>
-          <div className="min-w-0 px-5 py-14 md:p-16">
+          <div className="min-w-0 px-5 py-14 md:border-r-2 md:border-ink md:p-16">
             <p className="label mb-5">Aktive Partnerschaften</p>
             <ul className="divide-y-2 divide-ink border-y-2 border-ink">
               {partners.map((n) => (<li key={n} className="flex items-center justify-between gap-4 py-5 font-display text-xl font-extrabold uppercase md:text-2xl">{n}<span className="label text-ink-2">Logo</span></li>))}
             </ul>
-            <p className="label mt-8 flex items-center gap-3"><span aria-hidden className="grid size-10 place-items-center border-2 border-ink font-display font-black">BM</span>Baumeister · Bauen heißt Vertrauen</p>
+          </div>
+          <div className="min-w-0 bg-ink px-5 py-14 text-paper md:p-16">
+            <p className="label mb-5 text-signal">Qualität</p>
+            <h2 className="text-[clamp(1.9rem,4.2vw,3.5rem)] uppercase">Bauen heißt Vertrauen.</h2>
+            <p className="mt-6 max-w-md text-paper/80">Als Baumeisterbetrieb stehen wir für fachgerechte Ausführung und Handschlagqualität, seit 1951.</p>
+            <p className="label mt-8 flex items-center gap-3 text-paper"><span aria-hidden className="grid size-10 place-items-center border-2 border-paper font-display font-black">BM</span>Baumeister-Logo folgt</p>
           </div>
         </div>
       </section>
@@ -129,7 +128,7 @@ export default function Home() {
           <div className="min-w-0 border-ink px-5 py-12 md:border-r-2 md:p-16">
             <p className="label mb-5">05 / Abseits der Baustelle</p>
             <h2 className="text-[clamp(1.9rem,4.2vw,3.5rem)] [overflow-wrap:anywhere]">Garagen&shy;brennerei.</h2>
-            <p className="mt-6 max-w-md text-ink-2">Aus Leidenschaft gebrannt, in kleinen Mengen und mit derselben Sorgfalt wie unsere Bauwerke. Eine eigene Welt, im selben Geist.</p>
+            <p className="mt-6 max-w-md text-ink-2">Edelbrände aus kleinen Mengen, mit derselben Sorgfalt wie unsere Bauwerke. Eine eigene Welt, im selben Geist.</p>
             <Button asChild variant="ink" className="mt-8"><a href={site.brennereiUrl}>Zur Brennerei <ArrowUpRight className="size-4" /></a></Button>
           </div>
           <Placeholder note="Brennerei – Destille / Flaschen" ratio="aspect-[4/3] md:aspect-auto md:min-h-[360px]" className="border-0" />

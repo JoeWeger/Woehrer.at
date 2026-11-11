@@ -4,9 +4,9 @@ import { ArrowUpRight, Check } from "lucide-react";
 import { Button } from "./ui/button";
 import { Field, Input, Textarea } from "./ui/field";
 
-const areas = [["bau", "Bauprojekt"], ["sanierung", "Sanierung"], ["immobilie", "Immobilie"], ["sonstiges", "Sonstiges"]];
+const defaultAreas: [string, string][] = [["bau", "Bauprojekt"], ["sanierung", "Sanierung"], ["immobilie", "Immobilie"], ["sonstiges", "Sonstiges"]];
 
-export function ContactForm({ betreff = "", bereich = "bau" }: { betreff?: string; bereich?: string }) {
+export function ContactForm({ betreff = "", bereich = "bau", areas = defaultAreas, hint = "Was haben Sie vor? Ort, Zeitrahmen, Größe …" }: { betreff?: string; bereich?: string; areas?: [string, string][]; hint?: string }) {
   const [state, setState] = useState<"idle" | "sending" | "ok" | "error">("idle");
   const [area, setArea] = useState(bereich);
 
@@ -43,7 +43,7 @@ export function ContactForm({ betreff = "", bereich = "bau" }: { betreff?: strin
       </div>
       <Field label="E-Mail *" htmlFor="mail"><Input id="mail" name="mail" type="email" required autoComplete="email" placeholder="name@beispiel.at" /></Field>
       <Field label="Betreff" htmlFor="betreff"><Input id="betreff" name="betreff" defaultValue={betreff} placeholder="Kurz und knapp" /></Field>
-      <Field label="Nachricht *" htmlFor="msg"><Textarea id="msg" name="msg" required placeholder="Was haben Sie vor? Ort, Zeitrahmen, Größe …" /></Field>
+      <Field label="Nachricht *" htmlFor="msg"><Textarea id="msg" name="msg" required placeholder={hint} /></Field>
       <p className="text-sm text-ink-2">Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Angaben gemäß <a className="link-line text-blue" href="/datenschutz">Datenschutzerklärung</a> zu.</p>
       <div className="flex flex-wrap items-center gap-6">
         <Button type="submit" size="lg" disabled={state === "sending"}>{state === "sending" ? "Wird gesendet …" : "Nachricht senden"}<ArrowUpRight className="size-5" /></Button>

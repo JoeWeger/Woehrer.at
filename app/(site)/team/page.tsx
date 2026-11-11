@@ -43,16 +43,10 @@ export default function Page() {
           </div>
         </Container>
       </section>
-      <section id="jobs" className="scroll-mt-20 border-y-2 border-ink bg-signal py-16 text-on-signal md:py-28">
-        <Container className="grid gap-10 md:grid-cols-[1.2fr_1fr] md:items-end">
-          <div>
-            <p className="label mb-5">Karriere</p>
-            <h2 className="text-[clamp(2.5rem,7vw,5.5rem)] uppercase">Jobangebot.<br />Jetzt bewerben!</h2>
-          </div>
-          <div>
-            <p className="mb-8 max-w-md text-lg">Offene Stellen und Lehrstellen bitte hier eintragen. Bewerbungen nehmen wir gern per E-Mail entgegen.</p>
-            <Button asChild variant="ink" size="lg"><Link href="/kontakt?betreff=Bewerbung&bereich=sonstiges">Bewerbung senden <ArrowUpRight className="size-5" /></Link></Button>
-          </div>
+      <section className="border-y-2 border-ink bg-paper-2 py-12 md:py-16">
+        <Container className="flex flex-wrap items-center justify-between gap-6">
+          <p className="max-w-xl text-lg">Aktuell haben wir keine offenen Stellen. Initiativbewerbungen nehmen wir trotzdem gern entgegen.</p>
+          <Button asChild variant="outline"><Link href="/kontakt?betreff=Initiativbewerbung&bereich=sonstiges">Initiativ bewerben <ArrowUpRight className="size-4" /></Link></Button>
         </Container>
       </section>
       <CtaBand />
