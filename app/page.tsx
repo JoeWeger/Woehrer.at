@@ -16,7 +16,7 @@ export default function Home() {
       {/* HERO */}
       <section className="relative overflow-x-clip border-b-2 border-ink">
         <div className="relative">
-          <Placeholder note="Hero – Referenzprojekt, Querformat 16:9" ratio="aspect-[4/5] sm:aspect-[16/10] lg:aspect-[16/7]" className="border-0 [&>span]:absolute [&>span]:left-5 [&>span]:top-5 [&>span]:m-0" />
+          <Placeholder note="Hero – Referenzprojekt, Querformat 16:9" ratio="h-[32svh] min-h-[220px] sm:h-[42svh] lg:h-[calc(100svh-72px-330px)] lg:min-h-[280px] lg:max-h-[640px]" className="border-0 [&>span]:absolute [&>span]:left-5 [&>span]:top-5 [&>span]:m-0" />
           <Rays className="rays-slow pointer-events-none absolute -bottom-40 -right-24 size-[420px] text-signal/90 mix-blend-multiply md:-bottom-64 md:size-[640px]" rays={36} />
         </div>
         <Container className="relative">
