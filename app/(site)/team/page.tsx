@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Container, PageHero, SectionHead } from "@/components/section";
 import { Placeholder } from "@/components/placeholder";
@@ -13,7 +14,11 @@ export const metadata: Metadata = { title: "Team" };
 function PersonCard({ p, i }: { p: Person; i: number }) {
   return (
     <Reveal delay={(i % 4) * 70} className="flex h-full flex-col">
-      <Placeholder note={`Porträt ${p.name}`} ratio="aspect-[3/4]" />
+      {p.photo ? (
+        <div className="relative aspect-[3/4] overflow-hidden border-2 border-ink bg-paper-2">
+          <Image src={p.photo} alt={`Porträt ${p.name}`} fill sizes="(min-width:1024px) 22vw, (min-width:640px) 45vw, 90vw" className="object-cover" />
+        </div>
+      ) : <Placeholder note={`Porträt ${p.name}`} ratio="aspect-[3/4]" />}
       <div className="flex-1 border-2 border-t-0 border-ink px-4 py-4">
         <h3 className="font-display text-xl font-extrabold leading-tight">{p.name}</h3>
         {p.role && <p className="label mt-1.5 text-ink-2">{p.role}</p>}

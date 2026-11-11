@@ -71,19 +71,19 @@ export const partners = ["Burghart", "Malereibetrieb Niederleitner GmbH"];
 export const formatPrice = (p: { price: number; mode: string }) =>
   p.mode === "Miete" ? `€ ${p.price.toLocaleString("de-AT")} / Monat` : `€ ${p.price.toLocaleString("de-AT")}`;
 
-export type Person = { name: string; role?: string; phones: string[] };
+export type Person = { name: string; role?: string; phones: string[]; photo?: string };
 export const office: Person[] = [
-  { name: "Ing. Christoph Wöhrer", role: "Baumeister, Geschäftsführer", phones: ["07229/72411-0"] },
-  { name: "Wolfgang Vierlinger", role: "Technik", phones: ["07229/72411-15", "0664/828 04 20"] },
-  { name: "Gertrude Stefan", role: "Lohnverrechnung, Buchhaltung", phones: ["07229/72411-14"] },
+  { name: "Ing. Christoph Wöhrer", photo: "/team/christoph-woehrer.jpg", role: "Baumeister, Geschäftsführer", phones: ["07229/72411-0"] },
+  { name: "Wolfgang Vierlinger", photo: "/team/wolfgang-vierlinger.jpg", role: "Technik", phones: ["07229/72411-15", "0664/828 04 20"] },
+  { name: "Gertrude Stefan", photo: "/team/gertrude-stefan.jpg", role: "Lohnverrechnung, Buchhaltung", phones: ["07229/72411-14"] },
 ];
 export const crew: Person[] = [
-  { name: "Oliver Weiss", phones: ["0664/23 39 875"] },
-  { name: "Thomas Zendorfer", phones: ["0664/82 80 414"] },
-  { name: "Willibald Lidlbauer", phones: ["0664/82 80 404"] },
-  { name: "Samir Kesmer", phones: ["0664/82 80 406"] },
-  { name: "Lindim Ramadani", phones: ["0664/82 80 417"] },
-  { name: "Gerald Feichtner", phones: ["0664/11 32 784"] },
+  { name: "Oliver Weiss", photo: "/team/oliver-weiss.jpg", phones: ["0664/23 39 875"] },
+  { name: "Thomas Zendorfer", photo: "/team/thomas-zendorfer.jpg", phones: ["0664/82 80 414"] },
+  { name: "Willibald Lidlbauer", photo: "/team/willibald-lidlbauer.jpg", phones: ["0664/82 80 404"] },
+  { name: "Samir Kesmer", photo: "/team/samir-kesmer.jpg", phones: ["0664/82 80 406"] },
+  { name: "Lindim Ramadani", photo: "/team/lindim-ramadani.jpg", phones: ["0664/82 80 417"] },
+  { name: "Gerald Feichtner", photo: "/team/gerald-feichtner.jpg", phones: ["0664/11 32 784"] },
 ];
 // "0664/82 80 414" -> "+4366482 80414"; Endung "-0" (Zentrale) entfällt
 export const telHref = (n: string) => "+43" + n.replace(/-0$/, "").replace(/[^\d]/g, "").replace(/^0/, "");
