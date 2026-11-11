@@ -37,7 +37,11 @@ export default function Page() {
       <PageHero no="05" kicker="Team" title="Die Menschen hinter Ihrem Bau." intro="Ein eingespieltes Team aus Büro und Baustelle. Sie erreichen uns direkt, ohne Umwege." />
       <section className="py-16 md:py-28">
         <Container>
-          <Reveal><Placeholder note="Teamfoto, Querformat" ratio="aspect-[16/8]" /></Reveal>
+          <Reveal>
+            <figure className="border-2 border-ink bg-paper-2">
+              <Image src="/team/team.jpg" alt="Das Team der Wöhrer Baugesellschaft vor dem Firmenbanner, alle mit Daumen nach oben" width={1100} height={440} priority sizes="(min-width:1320px) 1240px, 100vw" className="h-auto w-full" />
+            </figure>
+          </Reveal>
           <p className="label mb-6 mt-16 border-b-2 border-ink pb-3">Büro &amp; Geschäftsführung</p>
           <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
             {office.map((p, i) => <PersonCard key={p.name} p={p} i={i} />)}
