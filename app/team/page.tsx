@@ -6,30 +6,40 @@ import { Placeholder } from "@/components/placeholder";
 import { Reveal } from "@/components/reveal";
 import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/cta-band";
+import { crew, office, telHref, type Person } from "@/lib/data";
 
 export const metadata: Metadata = { title: "Team" };
 
-const people = [
-  ["Ing. Christoph Wöhrer", "Baumeister, Geschäftsführung"],
-  ["Gisela Wöhrer", "Büro"],
-  ["Name ergänzen", "Bauleitung"],
-  ["Name ergänzen", "Polier"],
-];
+function PersonCard({ p, i }: { p: Person; i: number }) {
+  return (
+    <Reveal delay={(i % 4) * 70} className="flex h-full flex-col">
+      <Placeholder note={`Porträt ${p.name}`} ratio="aspect-[3/4]" />
+      <div className="flex-1 border-2 border-t-0 border-ink px-4 py-4">
+        <h3 className="font-display text-xl font-extrabold leading-tight">{p.name}</h3>
+        {p.role && <p className="label mt-1.5 text-ink-2">{p.role}</p>}
+        <ul className="mt-3 space-y-0.5">
+          {p.phones.map((n) => (
+            <li key={n}><a href={`tel:${telHref(n)}`} className="link-line font-mono text-sm tabular-nums">{n}</a></li>))}
+        </ul>
+      </div>
+    </Reveal>
+  );
+}
 
 export default function Page() {
   return (
     <>
-      <PageHero no="05" kicker="Team" title="Die Menschen hinter Ihrem Bau." intro="Ein eingespieltes Team aus Büro, Bauleitung und Handwerk. Namen und Rollen bitte ergänzen." />
+      <PageHero no="05" kicker="Team" title="Die Menschen hinter Ihrem Bau." intro="Ein eingespieltes Team aus Büro und Baustelle. Sie erreichen uns direkt, ohne Umwege." />
       <section className="py-16 md:py-28">
         <Container>
           <Reveal><Placeholder note="Teamfoto, Querformat" ratio="aspect-[16/8]" /></Reveal>
-          <div className="mt-16 grid gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
-            {people.map(([n, r], i) => (
-              <Reveal key={i} delay={i * 70}>
-                <Placeholder note="Porträt" ratio="aspect-[4/5]" />
-                <h3 className="mt-4 font-display text-xl font-extrabold">{n}</h3>
-                <p className="label mt-1 text-ink-2">{r}</p>
-              </Reveal>))}
+          <p className="label mb-6 mt-16 border-b-2 border-ink pb-3">Büro &amp; Geschäftsführung</p>
+          <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+            {office.map((p, i) => <PersonCard key={p.name} p={p} i={i} />)}
+          </div>
+          <p className="label mb-6 mt-20 border-b-2 border-ink pb-3">Baustelle</p>
+          <div className="grid gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+            {crew.map((p, i) => <PersonCard key={p.name} p={p} i={i} />)}
           </div>
         </Container>
       </section>
