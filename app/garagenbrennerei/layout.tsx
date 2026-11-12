@@ -19,12 +19,12 @@ export default function BrennereiLayout({ children }: { children: React.ReactNod
       <header className="sticky top-0 z-50 border-b-2 border-ink bg-paper/95 backdrop-blur">
         <a href="#inhalt" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:bg-signal focus:px-4 focus:py-2 focus:text-on-signal">Zum Inhalt springen</a>
         <div className="mx-auto flex h-[72px] max-w-[1320px] items-center justify-between px-5 md:px-10">
-          <Link href="/garagenbrennerei" className="font-display text-xl font-black uppercase tracking-[0.06em] md:text-2xl" style={{ fontStretch: "125%" }}>
+          <Link href="/garagenbrennerei" className="font-display text-[0.95rem] font-black uppercase tracking-[0.04em] sm:text-xl md:text-2xl" style={{ fontStretch: "125%" }}>
             Garagen<span className="text-signal">brennerei</span>
           </Link>
-          <nav aria-label="Brennerei" className="flex items-center gap-7">
+          <nav aria-label="Brennerei" className="flex items-center gap-4 md:gap-7">
             {nav.map(([l, h]) => <a key={h} href={h} className="link-line hidden font-display text-sm font-bold uppercase tracking-[0.06em] md:inline">{l}</a>)}
-            <Button asChild><a href="#kontakt">Anfragen <ArrowUpRight className="size-4" /></a></Button>
+            <Button asChild className="min-h-11 px-4 text-xs sm:min-h-12 sm:px-6 sm:text-sm"><a href="#kontakt">Anfragen <ArrowUpRight className="hidden size-4 sm:block" /></a></Button>
           </nav>
         </div>
       </header>

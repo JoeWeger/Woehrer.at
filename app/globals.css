@@ -81,6 +81,7 @@
     line-height: 0.98;
     letter-spacing: -0.02em;
     text-wrap: balance;
+    overflow-wrap: anywhere;
   }
   p { text-wrap: pretty; }
   ::selection { background: var(--signal); color: var(--on-signal); }

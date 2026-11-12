@@ -30,7 +30,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         </div>
         <aside className="lg:col-span-5 lg:sticky lg:top-28 lg:self-start">
           <p className="label">{p.place}</p>
-          <h1 className="mt-2 text-[clamp(2.5rem,5vw,4rem)] uppercase">{p.title}</h1>
+          <h1 className="mt-2 text-[clamp(1.9rem,8vw,4rem)] uppercase lg:text-[clamp(2.25rem,4vw,4rem)]">{p.title}</h1>
           <p className="mt-6 font-display text-4xl font-extrabold">{formatPrice(p)}</p>
           <dl className="mt-8 border-y-2 border-ink">
             {rows.map(([k, v]) => <div key={k} className="flex justify-between border-b border-line-soft py-3 last:border-0"><dt className="label text-ink-2">{k}</dt><dd className="font-medium">{v}</dd></div>)}

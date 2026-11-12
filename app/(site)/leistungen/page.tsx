@@ -20,7 +20,7 @@ export default function Page() {
               <Reveal className={`md:col-span-5 ${i % 2 ? "md:order-2" : ""}`}><Placeholder note={s.title} ratio="aspect-[4/5]" /></Reveal>
               <Reveal delay={100} className={`md:col-span-7 ${i % 2 ? "md:order-1" : ""} flex flex-col justify-center`}>
                 <p className="label mb-4">{s.n} / Leistung</p>
-                <h2 className="text-[clamp(2.5rem,6vw,5rem)] uppercase">{s.title}</h2>
+                <h2 className="text-[clamp(1.9rem,8vw,5rem)] uppercase">{s.title}</h2>
                 <p className="mt-6 max-w-xl text-lg text-ink-2">{s.text}</p>
                 <ul className="mt-8 max-w-xl divide-y divide-line-soft border-y-2 border-ink">
                   {s.items.map((l) => (
